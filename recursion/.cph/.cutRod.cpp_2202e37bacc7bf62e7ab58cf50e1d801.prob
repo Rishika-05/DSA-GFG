@@ -1,1 +1,0 @@
-{"name":"Local: cutRod","url":"e:\\CODING\\Programs\\GFG\\recursion\\cutRod.cpp","tests":[{"id":1621337192765,"input":"3\n5 2 5 1\n23 11 12 9\n5 4 2 6","output":"5\n2\n-1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\CODING\\Programs\\GFG\\recursion\\cutRod.cpp","group":"local","local":true}
