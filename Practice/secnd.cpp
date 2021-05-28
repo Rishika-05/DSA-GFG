@@ -19,7 +19,7 @@ int main()
         t--;
     }
 }
-*/
+
 
 int main()
 {
@@ -37,4 +37,12 @@ int main()
         j--;
     }
     cout<<ans<<"\n";
+}*/
+
+int main()
+{
+    int n=1920;
+    int ans=0;
+    for(int i=n;i>0;ans=ans*10+i%10,i/=10){}
+    cout<<ans;
 }
