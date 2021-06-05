@@ -1,62 +1,79 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 int prior(char c)
 {
-    if(c=='^')
-    return 3;
-    else if(c=='*' || c=='/')
-    return 2;
-    else if(c=='+' || c=='-')
-    return 1;
+    if (c == '^')
+        return 3;
+    else if (c == '*' || c == '/')
+        return 2;
+    else if (c == '+' || c == '-')
+        return 1;
     else
-    return -1;
+        return -1;
 }
 
-
-string Postfix(string st)
+string Postfix(string s)
 {
-    stack <char> s;
-    string ans="";
-    for(int i=0;i<st.length();i++)
+    stack<char> c;
+    string o = "";
+    for (int i = 0; i < s.length(); i++)
     {
-        char c = st[i];
-        if(c>='a' && c<='z')
-        ans+=c;
-        else if(c=='(')
-        s.push(c);
-        else if(c==')')
-        {
-            while(!s.empty() && s.top()!='(')
-            {
-                ans+=s.top();
-                s.pop();
-            }
-            s.pop();
-        }
+        if (isalpha(s[i]) || isdigit(s[i]))
+            o += s[i];
         else
         {
-            while(!s.empty() && prior(c)<=prior(s.top()))
+            if (c.empty())
+                c.push(s[i]);
+            else
             {
-                ans+=s.top();
-                s.pop();
+                if (s[i] == '(')
+                {
+                    c.push('(');
+                    continue;
+                }
+                if (s[i] == ')')
+                {
+                    while (!c.empty())
+                    {
+                        if (c.top() == '(')
+                        {
+                            c.pop();
+                            break;
+                        }
+                        o += c.top();
+                        c.pop();
+                    }
+                    continue;
+                }
+                if (prior(s[i]) > prior(c.top()))
+                    c.push(s[i]);
+                else
+                {
+                    while (!c.empty() && prior(s[i]) <= prior(c.top()))
+                    {
+                        if (c.top() == '(')
+                            break;
+                        o += c.top();
+                        c.pop();
+                    }
+                    c.push(s[i]);
+                }
             }
-            s.push(c);
         }
     }
-    while(!s.empty())
+    while (!c.empty())
     {
-        ans+=s.top();
-        s.pop();
+        o += c.top();
+        c.pop();
     }
-    return ans;
+    return o;
 }
 
 int main()
 {
     string infix;
-    cin>>infix;
-    cout<<Postfix(infix);
+    cin >> infix;
+    cout << Postfix(infix);
     return 0;
 }
-
