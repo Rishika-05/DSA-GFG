@@ -21,7 +21,7 @@ struct Queue
             return;
         int r = getBack();
         r = (r + 1) % cap;
-        arr[r++]=x;
+        arr[r++] = x;
         size++;
     }
     void dequeue()
@@ -57,7 +57,7 @@ struct Queue
     }
 };
 
-void Print(int arr[],int f,int b)
+void Print(int arr[], int f, int b)
 {
     for (int i = f; i <= b; i++)
         cout << arr[i] << " ";
@@ -70,10 +70,10 @@ int main()
     q->enqueue(2);
     q->enqueue(3);
     int b = q->getBack();
-    Print(q->arr, q->f,b);
-    cout<<"\n";
+    Print(q->arr, q->f, b);
+    cout << "\n";
     q->dequeue();
-    Print(q->arr, q->f,b);
-    cout<<"\n";
-    cout<<q->size<<"\n";   
+    Print(q->arr, q->f, b);
+    cout << "\n";
+    cout << q->size << "\n";
 }
