@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 int prior(char c)
@@ -12,7 +12,6 @@ int prior(char c)
     else
         return -1;
 }
-
 
 string infixToPostfix(string s)
 {
@@ -61,6 +60,6 @@ string infixToPostfix(string s)
 int main()
 {
     string s;
-    cin>>s;
-    cout<<infixToPostfix(s);
+    cin >> s;
+    cout << infixToPostfix(s);
 }
