@@ -221,7 +221,6 @@ bool my_compare(string a, string b)
 }
 void solve()
 {
-    
 }
 
 int main()
