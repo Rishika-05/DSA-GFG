@@ -1,7 +1,14 @@
 {
     "files.associations": {
         "*.cpp": "cpp",
-        "ostream": "cpp"
+        "*.js": "javascript",
+        "*.html": "html",
+        "*.json": "json",
+        "ostream": "cpp",
+        "deque": "cpp",
+        "string": "cpp",
+        "vector": "cpp",
+        "iostream": "cpp"
     },
     "python.pythonPath": "C:\\Users\\Rishika Raj\\AppData\\Local\\Programs\\Python\\Python39\\python.exe"
 }
